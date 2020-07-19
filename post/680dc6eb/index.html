@@ -1,14 +1,14 @@
-<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.1.1" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.1.1" type="image/png" sizes="32x32"><meta name="description" content="数组去重                           利用ES6 Set去重（ES6中最常用）       function unique (arr) {     return Array.from(new Set(arr)) } var arr &#x3D; [1,1,&amp;apos;true&amp;apos;,&amp;apos;true&amp;apos;,true,true,15,15,fals">
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="format-detection" content="telephone=no"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="icon" href="/images/icons/favicon-16x16.png?v=2.1.1" type="image/png" sizes="16x16"><link rel="icon" href="/images/icons/favicon-32x32.png?v=2.1.1" type="image/png" sizes="32x32"><meta name="description" content="数组去重                           利用ES6 Set去重（ES6中最常用）       12345678function unique (arr) &amp;#123;    return Array.from(new Set(arr))&amp;#125;var arr &#x3D; [1,1,&#39;true&#39;,&#39;true&#39;,true">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript实现数组去重">
 <meta property="og:url" content="https://diamondsme.github.io/post/680dc6eb/index.html">
-<meta property="og:site_name" content="DiamondsMe&#39;s World">
-<meta property="og:description" content="数组去重                           利用ES6 Set去重（ES6中最常用）       function unique (arr) {     return Array.from(new Set(arr)) } var arr &#x3D; [1,1,&amp;apos;true&amp;apos;,&amp;apos;true&amp;apos;,true,true,15,15,fals">
+<meta property="og:site_name" content="DiamondsMe-Craft">
+<meta property="og:description" content="数组去重                           利用ES6 Set去重（ES6中最常用）       12345678function unique (arr) &amp;#123;    return Array.from(new Set(arr))&amp;#125;var arr &#x3D; [1,1,&#39;true&#39;,&#39;true&#39;,true">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-07-07T14:46:35.000Z">
-<meta property="article:modified_time" content="2020-07-08T10:34:51.608Z">
+<meta property="article:modified_time" content="2020-07-08T10:53:39.820Z">
 <meta property="article:author" content="DiamondsMe">
-<meta name="twitter:card" content="summary"><title>javascript实现数组去重 | DiamondsMe's World</title><link ref="canonical" href="https://diamondsme.github.io/post/680dc6eb/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.1.1"><script>var Stun = window.Stun || {};
+<meta name="twitter:card" content="summary"><title>javascript实现数组去重 | DiamondsMe-Craft</title><link ref="canonical" href="https://diamondsme.github.io/post/680dc6eb/"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.1/css/all.min.css" type="text/css"><link rel="stylesheet" href="/css/index.css?v=2.1.1"><script>var Stun = window.Stun || {};
 var CONFIG = {
   root: '/',
   algolia: undefined,
@@ -31,222 +31,75 @@ var CONFIG = {
   sourcePath: {"js":"js","css":"css","images":"images"},
 };
 
-window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">首页</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">归档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags&quot;"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">DiamondsMe's World</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">javascript实现数组去重</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-07-07</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-07-08</span></span></div></header><div class="post-body">
+window.CONFIG = CONFIG;</script><meta name="generator" content="Hexo 4.2.1"></head><body><div class="container" id="container"><header class="header" id="header"><div class="header-inner"><nav class="header-nav header-nav--fixed"><div class="header-nav-inner"><div class="header-nav-menubtn"><i class="fas fa-bars"></i></div><div class="header-nav-menu"><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/"><span class="header-nav-menu-item__icon"><i class="fas fa-home"></i></span><span class="header-nav-menu-item__text">主世界</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/archives/"><span class="header-nav-menu-item__icon"><i class="fas fa-folder-open"></i></span><span class="header-nav-menu-item__text">存档</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/categories/"><span class="header-nav-menu-item__icon"><i class="fas fa-layer-group"></i></span><span class="header-nav-menu-item__text">分类</span></a></div><div class="header-nav-menu-item"><a class="header-nav-menu-item__link" href="/tags/"><span class="header-nav-menu-item__icon"><i class="fas fa-tags&quot;"></i></span><span class="header-nav-menu-item__text">标签</span></a></div></div><div class="header-nav-search"><span class="header-nav-search__icon"><i class="fas fa-search"></i></span><span class="header-nav-search__text">搜索</span></div><div class="header-nav-mode"><div class="mode"><div class="mode-track"><span class="mode-track-moon"></span><span class="mode-track-sun"></span></div><div class="mode-thumb"></div></div></div></div></nav><div class="header-banner"><div class="header-banner-info"><div class="header-banner-info__title">DiamondsMe-Craft</div><div class="header-banner-info__subtitle"></div></div></div></div></header><main class="main" id="main"><div class="main-inner"><div class="content-wrap" id="content-wrap"><div class="content" id="content"><!-- Just used to judge whether it is an article page--><div id="is-post"></div><div class="post"><header class="post-header"><h1 class="post-title">javascript实现数组去重</h1><div class="post-meta"><span class="post-meta-item post-meta-item--createtime"><span class="post-meta-item__icon"><i class="far fa-calendar-plus"></i></span><span class="post-meta-item__info">发表于</span><span class="post-meta-item__value">2020-07-07</span></span><span class="post-meta-item post-meta-item--updatetime"><span class="post-meta-item__icon"><i class="far fa-calendar-check"></i></span><span class="post-meta-item__info">更新于</span><span class="post-meta-item__value">2020-07-08</span></span></div></header><div class="post-body">
         <h1 id="数组去重"   >
           <a href="#数组去重" class="heading-link"><i class="fas fa-link"></i></a>数组去重</h1>
       
         <h2 id="利用ES6-Set去重（ES6中最常用）"   >
           <a href="#利用ES6-Set去重（ES6中最常用）" class="heading-link"><i class="fas fa-link"></i></a>利用ES6 Set去重（ES6中最常用）</h2>
-      <pre><code>function unique (arr) {
-    return Array.from(new Set(arr))
-}
-var arr = [1,1,&apos;true&apos;,&apos;true&apos;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&apos;NaN&apos;, 0, 0, &apos;a&apos;, &apos;a&apos;,{},{}];
+      <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function unique (arr) &#123;</span><br><span class="line">    return Array.from(new Set(arr))</span><br><span class="line">&#125;</span><br><span class="line">var arr &#x3D; [1,1,&#39;true&#39;,&#39;true&#39;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&#39;NaN&#39;, 0, 0, &#39;a&#39;, &#39;a&#39;,&#123;&#125;,&#123;&#125;];</span><br><span class="line"></span><br><span class="line">console.log(unique(arr))</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;[1, &quot;true&quot;, true, 15, false, undefined, null, NaN, &quot;NaN&quot;, 0, &quot;a&quot;, &#123;&#125;, &#123;&#125;]</span><br></pre></td></tr></table></div></figure>
 
-console.log(unique(arr))
-
- //[1, &quot;true&quot;, true, 15, false, undefined, null, NaN, &quot;NaN&quot;, 0, &quot;a&quot;, {}, {}]</code></pre><p>不考虑兼容性，这种去重的方法代码最少。这种方法还无法去掉“{}”空对象，后面的高阶方法会添加去掉重复“{}”的方法。</p>
+<p>不考虑兼容性，这种去重的方法代码最少。这种方法还无法去掉“{}”空对象，后面的高阶方法会添加去掉重复“{}”的方法。</p>
 <a id="more"></a>
 
         <h2 id="利用for嵌套for，然后splice去重（ES5中最常用）"   >
           <a href="#利用for嵌套for，然后splice去重（ES5中最常用）" class="heading-link"><i class="fas fa-link"></i></a>利用for嵌套for，然后splice去重（ES5中最常用）</h2>
-      <pre><code>function unique(arr){            
-    for(var i=0; i&lt;arr.length; i++){
-        for(var j=i+1; j&lt;arr.length; j++){
-            if(arr[i]==arr[j]){         //第一个等同于第二个，splice方法删除第二个
-                arr.splice(j,1);
-                j--;
-            }
-        }
-    }
-    return arr;
-}
+      <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr)&#123;            </span><br><span class="line">    for(var i&#x3D;0; i&lt;arr.length; i++)&#123;</span><br><span class="line">        for(var j&#x3D;i+1; j&lt;arr.length; j++)&#123;</span><br><span class="line">            if(arr[i]&#x3D;&#x3D;arr[j])&#123;         &#x2F;&#x2F;第一个等同于第二个，splice方法删除第二个</span><br><span class="line">                arr.splice(j,1);</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr &#x3D; [1,1,&#39;true&#39;,&#39;true&#39;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&#39;NaN&#39;, 0, 0, &#39;a&#39;, &#39;a&#39;,&#123;&#125;,&#123;&#125;];</span><br><span class="line"></span><br><span class="line">console.log(unique(arr))</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;[1, &quot;true&quot;, 15, false, undefined, NaN, NaN, &quot;NaN&quot;, &quot;a&quot;, &#123;…&#125;, &#123;…&#125;]     &#x2F;&#x2F;NaN和&#123;&#125;没有去重，两个null直接消失了</span><br></pre></td></tr></table></div></figure>
 
-var arr = [1,1,&apos;true&apos;,&apos;true&apos;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&apos;NaN&apos;, 0, 0, &apos;a&apos;, &apos;a&apos;,{},{}];
 
-console.log(unique(arr))
-
-//[1, &quot;true&quot;, 15, false, undefined, NaN, NaN, &quot;NaN&quot;, &quot;a&quot;, {…}, {…}]     //NaN和{}没有去重，两个null直接消失了</code></pre>
         <h2 id="利用indexOf去重"   >
           <a href="#利用indexOf去重" class="heading-link"><i class="fas fa-link"></i></a>利用indexOf去重</h2>
-      <pre><code>function unique(arr) {
-    if (!Array.isArray(arr)) {
-        console.log(&apos;type error!&apos;)
-        return
-    }
-    var array = [];
-    for (var i = 0; i &lt; arr.length; i++) {
-        if (array .indexOf(arr[i]) === -1) {
-            array .push(arr[i])
-        }
-    }
-    return array;
-}
+      <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr) &#123;</span><br><span class="line">    if (!Array.isArray(arr)) &#123;</span><br><span class="line">        console.log(&#39;type error!&#39;)</span><br><span class="line">        return</span><br><span class="line">    &#125;</span><br><span class="line">    var array &#x3D; [];</span><br><span class="line">    for (var i &#x3D; 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">        if (array .indexOf(arr[i]) &#x3D;&#x3D;&#x3D; -1) &#123;</span><br><span class="line">            array .push(arr[i])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return array;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr &#x3D; [1,1,&#39;true&#39;,&#39;true&#39;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&#39;NaN&#39;, 0, 0, &#39;a&#39;, &#39;a&#39;,&#123;&#125;,&#123;&#125;];</span><br><span class="line"></span><br><span class="line">console.log(unique(arr))</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; [1, &quot;true&quot;, true, 15, false, undefined, null, NaN, NaN, &quot;NaN&quot;, 0, &quot;a&quot;, &#123;…&#125;, &#123;…&#125;]  &#x2F;&#x2F;NaN、&#123;&#125;没有去重</span><br></pre></td></tr></table></div></figure>
 
-var arr = [1,1,&apos;true&apos;,&apos;true&apos;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&apos;NaN&apos;, 0, 0, &apos;a&apos;, &apos;a&apos;,{},{}];
-
-console.log(unique(arr))
-
-// [1, &quot;true&quot;, true, 15, false, undefined, null, NaN, NaN, &quot;NaN&quot;, 0, &quot;a&quot;, {…}, {…}]  //NaN、{}没有去重</code></pre><p>新建一个空的结果数组，for 循环原数组，判断结果数组是否存在当前元素，如果有相同的值则跳过，不相同则push进数组。</p>
+<p>新建一个空的结果数组，for 循环原数组，判断结果数组是否存在当前元素，如果有相同的值则跳过，不相同则push进数组。</p>
 
         <h2 id="利用sort"   >
           <a href="#利用sort" class="heading-link"><i class="fas fa-link"></i></a>利用sort()</h2>
-      <pre><code>function unique(arr) {
-    if (!Array.isArray(arr)) {
-        console.log(&apos;type error!&apos;)
-        return;
-    }
-    arr = arr.sort()
-    var arrry= [arr[0]];
-    for (var i = 1; i &lt; arr.length; i++) {
-        if (arr[i] !== arr[i-1]) {
-            arrry.push(arr[i]);
-        }
-    }
-    return arrry;
-}
+      <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr) &#123;</span><br><span class="line">    if (!Array.isArray(arr)) &#123;</span><br><span class="line">        console.log(&#39;type error!&#39;)</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    arr &#x3D; arr.sort()</span><br><span class="line">    var arrry&#x3D; [arr[0]];</span><br><span class="line">    for (var i &#x3D; 1; i &lt; arr.length; i++) &#123;</span><br><span class="line">        if (arr[i] !&#x3D;&#x3D; arr[i-1]) &#123;</span><br><span class="line">            arrry.push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return arrry;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr &#x3D; [1,1,&#39;true&#39;,&#39;true&#39;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&#39;NaN&#39;, 0, 0, &#39;a&#39;, &#39;a&#39;,&#123;&#125;,&#123;&#125;];</span><br><span class="line"></span><br><span class="line">console.log(unique(arr))</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; [0, 1, 15, &quot;NaN&quot;, NaN, NaN, &#123;…&#125;, &#123;…&#125;, &quot;a&quot;, false, null, true, &quot;true&quot;, undefined]      &#x2F;&#x2F;NaN、&#123;&#125;没有去重</span><br></pre></td></tr></table></div></figure>
 
-var arr = [1,1,&apos;true&apos;,&apos;true&apos;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&apos;NaN&apos;, 0, 0, &apos;a&apos;, &apos;a&apos;,{},{}];
-
-console.log(unique(arr))
-
-// [0, 1, 15, &quot;NaN&quot;, NaN, NaN, {…}, {…}, &quot;a&quot;, false, null, true, &quot;true&quot;, undefined]      //NaN、{}没有去重</code></pre><p>利用sort()排序方法，然后根据排序后的结果进行遍历及相邻元素比对。</p>
+<p>利用sort()排序方法，然后根据排序后的结果进行遍历及相邻元素比对。</p>
 
         <h2 id="利用对象的属性不能相同的特点进行去重"   >
           <a href="#利用对象的属性不能相同的特点进行去重" class="heading-link"><i class="fas fa-link"></i></a>利用对象的属性不能相同的特点进行去重</h2>
-      <pre><code>function unique(arr) {
-    if (!Array.isArray(arr)) {
-        console.log(&apos;type error!&apos;)
-        return
-    }
-    var arrry= [];
-    var  obj = {};
-    for (var i = 0; i &lt; arr.length; i++) {
-        if (!obj[arr[i]]) {
-            arrry.push(arr[i])
-            obj[arr[i]] = 1
-        } else {
-            obj[arr[i]]++
-        }
-    }
-    return arrry;
-}
+      <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr) &#123;</span><br><span class="line">    if (!Array.isArray(arr)) &#123;</span><br><span class="line">        console.log(&#39;type error!&#39;)</span><br><span class="line">        return</span><br><span class="line">    &#125;</span><br><span class="line">    var arrry&#x3D; [];</span><br><span class="line">    var  obj &#x3D; &#123;&#125;;</span><br><span class="line">    for (var i &#x3D; 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">        if (!obj[arr[i]]) &#123;</span><br><span class="line">            arrry.push(arr[i])</span><br><span class="line">            obj[arr[i]] &#x3D; 1</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            obj[arr[i]]++</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return arrry;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr &#x3D; [1,1,&#39;true&#39;,&#39;true&#39;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&#39;NaN&#39;, 0, 0, &#39;a&#39;, &#39;a&#39;,&#123;&#125;,&#123;&#125;];</span><br><span class="line"></span><br><span class="line">console.log(unique(arr))</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;[1, &quot;true&quot;, 15, false, undefined, null, NaN, 0, &quot;a&quot;, &#123;…&#125;]    &#x2F;&#x2F;两个true直接去掉了，NaN和&#123;&#125;去重</span><br></pre></td></tr></table></div></figure>
 
-var arr = [1,1,&apos;true&apos;,&apos;true&apos;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&apos;NaN&apos;, 0, 0, &apos;a&apos;, &apos;a&apos;,{},{}];
 
-console.log(unique(arr))
-
-//[1, &quot;true&quot;, 15, false, undefined, null, NaN, 0, &quot;a&quot;, {…}]    //两个true直接去掉了，NaN和{}去重</code></pre>
         <h2 id="利用includes"   >
           <a href="#利用includes" class="heading-link"><i class="fas fa-link"></i></a>利用includes</h2>
-      <pre><code>function unique(arr) {
-    if (!Array.isArray(arr)) {
-        console.log(&apos;type error!&apos;)
-        return
-    }
-    var array =[];
-    for(var i = 0; i &lt; arr.length; i++) {
-            if( !array.includes( arr[i]) ) {//includes 检测数组是否有某个值
-                    array.push(arr[i]);
-            }
-    }
-    return array
-}
+      <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr) &#123;</span><br><span class="line">    if (!Array.isArray(arr)) &#123;</span><br><span class="line">        console.log(&#39;type error!&#39;)</span><br><span class="line">        return</span><br><span class="line">    &#125;</span><br><span class="line">    var array &#x3D;[];</span><br><span class="line">    for(var i &#x3D; 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">            if( !array.includes( arr[i]) ) &#123;&#x2F;&#x2F;includes 检测数组是否有某个值</span><br><span class="line">                    array.push(arr[i]);</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return array</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr &#x3D; [1,1,&#39;true&#39;,&#39;true&#39;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&#39;NaN&#39;, 0, 0, &#39;a&#39;, &#39;a&#39;,&#123;&#125;,&#123;&#125;];</span><br><span class="line"></span><br><span class="line">console.log(unique(arr))</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;[1, &quot;true&quot;, true, 15, false, undefined, null, NaN, &quot;NaN&quot;, 0, &quot;a&quot;, &#123;…&#125;, &#123;…&#125;]     &#x2F;&#x2F;&#123;&#125;没有去重</span><br></pre></td></tr></table></div></figure>
 
-var arr = [1,1,&apos;true&apos;,&apos;true&apos;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&apos;NaN&apos;, 0, 0, &apos;a&apos;, &apos;a&apos;,{},{}];
 
-console.log(unique(arr))
-
-//[1, &quot;true&quot;, true, 15, false, undefined, null, NaN, &quot;NaN&quot;, 0, &quot;a&quot;, {…}, {…}]     //{}没有去重</code></pre>
         <h2 id="利用hasOwnProperty"   >
           <a href="#利用hasOwnProperty" class="heading-link"><i class="fas fa-link"></i></a>利用hasOwnProperty</h2>
-      <pre><code>function unique(arr) {
-    var obj = {};
-    return arr.filter(function(item, index, arr){
-        return obj.hasOwnProperty(typeof item + item) ? false : (obj[typeof item + item] = true)
-    })
-}
-var arr = [1,1,&apos;true&apos;,&apos;true&apos;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&apos;NaN&apos;, 0, 0, &apos;a&apos;, &apos;a&apos;,{},{}];
+      <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr) &#123;</span><br><span class="line">    var obj &#x3D; &#123;&#125;;</span><br><span class="line">    return arr.filter(function(item, index, arr)&#123;</span><br><span class="line">        return obj.hasOwnProperty(typeof item + item) ? false : (obj[typeof item + item] &#x3D; true)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">var arr &#x3D; [1,1,&#39;true&#39;,&#39;true&#39;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&#39;NaN&#39;, 0, 0, &#39;a&#39;, &#39;a&#39;,&#123;&#125;,&#123;&#125;];</span><br><span class="line"></span><br><span class="line">console.log(unique(arr));</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;[1, &quot;true&quot;, true, 15, false, undefined, null, NaN, &quot;NaN&quot;, 0, &quot;a&quot;, &#123;…&#125;]   &#x2F;&#x2F;所有的都去重了</span><br></pre></td></tr></table></div></figure>
 
-console.log(unique(arr));
-
-//[1, &quot;true&quot;, true, 15, false, undefined, null, NaN, &quot;NaN&quot;, 0, &quot;a&quot;, {…}]   //所有的都去重了</code></pre><p>利用hasOwnProperty 判断是否存在对象属性</p>
+<p>利用hasOwnProperty 判断是否存在对象属性</p>
 
         <h2 id="利用filter"   >
           <a href="#利用filter" class="heading-link"><i class="fas fa-link"></i></a>利用filter</h2>
-      <pre><code>function unique(arr) {
-    return arr.filter(function(item, index, arr) {
-        //当前元素，在原始数组中的第一个索引==当前索引值，否则返回当前元素
-        return arr.indexOf(item, 0) === index;
-    });
-}
+      <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr) &#123;</span><br><span class="line">    return arr.filter(function(item, index, arr) &#123;</span><br><span class="line">        &#x2F;&#x2F;当前元素，在原始数组中的第一个索引&#x3D;&#x3D;当前索引值，否则返回当前元素</span><br><span class="line">        return arr.indexOf(item, 0) &#x3D;&#x3D;&#x3D; index;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr &#x3D; [1,1,&#39;true&#39;,&#39;true&#39;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&#39;NaN&#39;, 0, 0, &#39;a&#39;, &#39;a&#39;,&#123;&#125;,&#123;&#125;];</span><br><span class="line"></span><br><span class="line">console.log(unique(arr))</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;[1, &quot;true&quot;, true, 15, false, undefined, null, &quot;NaN&quot;, 0, &quot;a&quot;, &#123;…&#125;, &#123;…&#125;]</span><br></pre></td></tr></table></div></figure>
 
-var arr = [1,1,&apos;true&apos;,&apos;true&apos;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&apos;NaN&apos;, 0, 0, &apos;a&apos;, &apos;a&apos;,{},{}];
 
-console.log(unique(arr))
-
-//[1, &quot;true&quot;, true, 15, false, undefined, null, &quot;NaN&quot;, 0, &quot;a&quot;, {…}, {…}]</code></pre>
         <h2 id="利用递归去重"   >
           <a href="#利用递归去重" class="heading-link"><i class="fas fa-link"></i></a>利用递归去重</h2>
-      <pre><code>function unique(arr) {
-    var array= arr;
-    var len = array.length;
+      <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr) &#123;</span><br><span class="line">    var array&#x3D; arr;</span><br><span class="line">    var len &#x3D; array.length;</span><br><span class="line"></span><br><span class="line">    array.sort(function(a,b)&#123;   &#x2F;&#x2F;排序后更加方便去重</span><br><span class="line">        return a - b;</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    function loop(index)&#123;</span><br><span class="line">        if(index &gt;&#x3D; 1)&#123;</span><br><span class="line">            if(array[index] &#x3D;&#x3D;&#x3D; array[index-1])&#123;</span><br><span class="line">                array.splice(index,1);</span><br><span class="line">            &#125;</span><br><span class="line">            loop(index - 1);    &#x2F;&#x2F;递归loop，然后数组去重</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    loop(len-1);</span><br><span class="line">    return array;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr &#x3D; [1,1,&#39;true&#39;,&#39;true&#39;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&#39;NaN&#39;, 0, 0, &#39;a&#39;, &#39;a&#39;,&#123;&#125;,&#123;&#125;];</span><br><span class="line"></span><br><span class="line">console.log(unique(arr))</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;[1, &quot;a&quot;, &quot;true&quot;, true, 15, false, 1, &#123;…&#125;, null, NaN, NaN, &quot;NaN&quot;, 0, &quot;a&quot;, &#123;…&#125;, undefined]</span><br></pre></td></tr></table></div></figure>
 
-    array.sort(function(a,b){   //排序后更加方便去重
-        return a - b;
-    })
 
-    function loop(index){
-        if(index &gt;= 1){
-            if(array[index] === array[index-1]){
-                array.splice(index,1);
-            }
-            loop(index - 1);    //递归loop，然后数组去重
-        }
-    }
-    loop(len-1);
-    return array;
-}
-
-var arr = [1,1,&apos;true&apos;,&apos;true&apos;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&apos;NaN&apos;, 0, 0, &apos;a&apos;, &apos;a&apos;,{},{}];
-
-console.log(unique(arr))
-
-//[1, &quot;a&quot;, &quot;true&quot;, true, 15, false, 1, {…}, null, NaN, NaN, &quot;NaN&quot;, 0, &quot;a&quot;, {…}, undefined]</code></pre>
         <h2 id="利用Map数据结构去重"   >
           <a href="#利用Map数据结构去重" class="heading-link"><i class="fas fa-link"></i></a>利用Map数据结构去重</h2>
-      <pre><code>function arrayNonRepeatfy(arr) {
-    let map = new Map();
-    let array = new Array();  // 数组用于返回结果
-    for (let i = 0; i &lt; arr.length; i++) {
-        if(map .has(arr[i])) {  // 如果有该key值
-        map .set(arr[i], true); 
-        } else { 
-        map .set(arr[i], false);   // 如果没有该key值
-        array .push(arr[i]);
-        }
-    } 
-    return array ;
-}
+      <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">function arrayNonRepeatfy(arr) &#123;</span><br><span class="line">    let map &#x3D; new Map();</span><br><span class="line">    let array &#x3D; new Array();  &#x2F;&#x2F; 数组用于返回结果</span><br><span class="line">    for (let i &#x3D; 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">        if(map .has(arr[i])) &#123;  &#x2F;&#x2F; 如果有该key值</span><br><span class="line">        map .set(arr[i], true); </span><br><span class="line">        &#125; else &#123; </span><br><span class="line">        map .set(arr[i], false);   &#x2F;&#x2F; 如果没有该key值</span><br><span class="line">        array .push(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; </span><br><span class="line">    return array ;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr &#x3D; [1,1,&#39;true&#39;,&#39;true&#39;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&#39;NaN&#39;, 0, 0, &#39;a&#39;, &#39;a&#39;,&#123;&#125;,&#123;&#125;];</span><br><span class="line"></span><br><span class="line">console.log(unique(arr))</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;[1, &quot;a&quot;, &quot;true&quot;, true, 15, false, 1, &#123;…&#125;, null, NaN, NaN, &quot;NaN&quot;, 0, &quot;a&quot;, &#123;…&#125;, undefined]</span><br></pre></td></tr></table></div></figure>
 
-var arr = [1,1,&apos;true&apos;,&apos;true&apos;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&apos;NaN&apos;, 0, 0, &apos;a&apos;, &apos;a&apos;,{},{}];
 
-console.log(unique(arr))
-
-//[1, &quot;a&quot;, &quot;true&quot;, true, 15, false, 1, {…}, null, NaN, NaN, &quot;NaN&quot;, 0, &quot;a&quot;, {…}, undefined]</code></pre>
         <h2 id="利用reduce-includes"   >
           <a href="#利用reduce-includes" class="heading-link"><i class="fas fa-link"></i></a>利用reduce+includes</h2>
-      <pre><code>function unique(arr){
-    return arr.reduce((prev,cur) =&gt; prev.includes(cur) ? prev : [...prev,cur],[]);
-}
+      <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function unique(arr)&#123;</span><br><span class="line">    return arr.reduce((prev,cur) &#x3D;&gt; prev.includes(cur) ? prev : [...prev,cur],[]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var arr &#x3D; [1,1,&#39;true&#39;,&#39;true&#39;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&#39;NaN&#39;, 0, 0, &#39;a&#39;, &#39;a&#39;,&#123;&#125;,&#123;&#125;];</span><br><span class="line"></span><br><span class="line">console.log(unique(arr));</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; [1, &quot;true&quot;, true, 15, false, undefined, null, NaN, &quot;NaN&quot;, 0, &quot;a&quot;, &#123;…&#125;, &#123;…&#125;]</span><br></pre></td></tr></table></div></figure>
 
-var arr = [1,1,&apos;true&apos;,&apos;true&apos;,true,true,15,15,false,false, undefined,undefined, null,null, NaN, NaN,&apos;NaN&apos;, 0, 0, &apos;a&apos;, &apos;a&apos;,{},{}];
 
-console.log(unique(arr));
-
-// [1, &quot;true&quot;, true, 15, false, undefined, null, NaN, &quot;NaN&quot;, 0, &quot;a&quot;, {…}, {…}]</code></pre>
         <h2 id="…new-Set-arr"   >
           <a href="#…new-Set-arr" class="heading-link"><i class="fas fa-link"></i></a>[…new Set(arr)]</h2>
-      <pre><code>[...new Set(arr)] </code></pre>
+      <figure class="highlight plain"><div class="table-container"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[...new Set(arr)]</span><br></pre></td></tr></table></div></figure>
+
+
         <h2 id="参考文章"   >
           <a href="#参考文章" class="heading-link"><i class="fas fa-link"></i></a>参考文章</h2>
       <p><span class="exturl"><a class="exturl__link"   href="https://segmentfault.com/a/1190000016418021"  target="_blank" rel="noopener" title="Markdown">JavaScript数组去重（12种方法，史上最全）</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>
@@ -264,7 +117,7 @@ console.log(unique(arr));
           利用Map数据结构去重</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#利用reduce-includes"><span class="toc-number">1.11.</span> <span class="toc-text">
           利用reduce+includes</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#…new-Set-arr"><span class="toc-number">1.12.</span> <span class="toc-text">
           […new Set(arr)]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文章"><span class="toc-number">1.13.</span> <span class="toc-text">
-          参考文章</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://avatars1.githubusercontent.com/u/13076734" alt="avatar"></div><p class="sidebar-ov-author__text">稳中求进～</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/DiamondsMe" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">6</div><div class="sidebar-ov-state-item__name">归档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">2</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">3</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2020</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>DiamondsMe</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v4.2.1</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.1.1</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
+          参考文章</span></a></li></ol></li></ol></section><!-- ov = overview--><section class="sidebar-ov hide"><div class="sidebar-ov-author"><div class="sidebar-ov-author__avatar"><img class="sidebar-ov-author__avatar_img" src="https://avatars1.githubusercontent.com/u/13076734" alt="avatar"></div><p class="sidebar-ov-author__text">努力成为别人的世界～</p></div><div class="sidebar-ov-social"><a class="sidebar-ov-social-item" href="https://github.com/DiamondsMe" target="_blank" rel="noopener" data-popover="Github" data-popover-pos="up"><span class="sidebar-ov-social-item__icon"><i class="fab fa-github"></i></span></a></div><div class="sidebar-ov-state"><a class="sidebar-ov-state-item sidebar-ov-state-item--posts" href="/archives/"><div class="sidebar-ov-state-item__count">11</div><div class="sidebar-ov-state-item__name">存档</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--categories" href="/categories/"><div class="sidebar-ov-state-item__count">3</div><div class="sidebar-ov-state-item__name">分类</div></a><a class="sidebar-ov-state-item sidebar-ov-state-item--tags" href="/tags/"><div class="sidebar-ov-state-item__count">6</div><div class="sidebar-ov-state-item__name">标签</div></a></div><div class="sidebar-ov-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank" rel="noopener" data-popover="知识共享许可协议" data-popover-pos="up"><img src="/images/cc-by-nc-sa.svg"></a></div></section><div class="sidebar-reading"><div class="sidebar-reading-info"><span class="sidebar-reading-info__text">你已阅读了 </span><span class="sidebar-reading-info__num">0</span></div><div class="sidebar-reading-line"></div></div></aside></div><div class="clearfix"></div></div></main><footer class="footer" id="footer"><div class="footer-inner"><div><span>Copyright © 2020</span><span class="footer__icon"><i class="fas fa-heart"></i></span><span>DiamondsMe</span></div><div><span>由 <a href="http://hexo.io/" title="Hexo" target="_blank" rel="noopener">Hexo</a> 强力驱动</span><span> v4.2.1</span><span class="footer__devider">|</span><span>主题 - <a href="https://github.com/liuyib/hexo-theme-stun/" title="Stun" target="_blank" rel="noopener">Stun</a></span><span> v2.1.1</span></div></div></footer><div class="loading-bar" id="loading-bar"><div class="loading-bar__progress"></div></div><div class="back2top" id="back2top"><span class="back2top__icon"><i class="fas fa-rocket"></i></span></div></div><div class="search-mask"></div><div class="search-popup"><span class="search-close"></span><div class="search-input"><input placeholder="搜索文章（支持多关键词，请用空格分隔）"></div><div class="search-results"></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@v3.4.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.ui.min.js"></script><script>function initSearch() {
   var isXML = true;
   var search_path = 'search.xml';
 
