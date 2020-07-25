@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>localStorage、sessionStorage、Cookie的区别详解</title>
+      <link href="/post/e9431e4e/"/>
+      <url>/post/e9431e4e/</url>
+      
+        <content type="html"><![CDATA[<p>localStorage、sessionStorage、Cookie共同点:</p><p>都保存在浏览器端，且是同源的（顺便解释一下同源：域名、协议、端口号相同）</p><p>localStorage、sessionStorage、Cookie不共同点:</p><ul><li>存储大小的不同：</li></ul><p>localStorage的大小一般为5M<br>sessionStorage的大小一般为5M<br>cookies的大小一般为4K</p><ul><li>有效期不同：</li></ul><p>localStorage的有效期为永久有效，除非你进行手动删除。<br>sessionStorage在当前会话下有效，关闭页面或者浏览器时会被清空。<br>cookies在设置的有效之前有效，当超过有效期便会失效</p><ul><li>与服务器端的通信</li></ul><p>localStorage不参与服务器端的通信。<br>sessionStorage不参与服务器端的通信。<br>cookies参与服务器端通信，每次都会携带http的头信息中。（如果使用cookie保存过多数据会带来性能问题）</p><ul><li>localStorage和sessionStorage的作用域的区别详解</li></ul><p>不同浏览器无法共享localStorage或sessionStorage中的信息。<br>相同浏览器的不同页面间可以共享相同的 localStorage（页面属于相同域名和端口），但是不同页面或标签页间无法共享sessionStorage的信息。</p>        <h2 id="参考文章"   >          <a href="#参考文章" class="heading-link"><i class="fas fa-link"></i></a>参考文章</h2>      <p><span class="exturl"><a class="exturl__link"   href="https://blog.csdn.net/qq_26941173/article/details/88369543"  target="_blank" rel="noopener" title="Markdown">localStorage、sessionStorage、Cookie的区别详解</a><span class="exturl__icon"><i class="fas fa-external-link-alt"></i></span></span></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 前端 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> javascript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>箭头函数和普通函数的区别</title>
       <link href="/post/1eced665/"/>
       <url>/post/1eced665/</url>
